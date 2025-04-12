@@ -1,0 +1,8 @@
+id_cargo;cargo;requerimiento;id_Atraccion;experiencia minima
+1;cocinero;contar con curso de manejo de alimentos;0;2
+2;operario riesgo medio;manejo atracciones de reisgo medio;0;1
+3;operario riesgo alto jr;experto en manejo de monta–as rusas;2;3
+4;operario riesgo alto jr;experto en atracciones de alturas;3;3
+5;empleado;oficios varios de riesgo bajo;0;0
+6;operario riesgo alto sr;experto en manejo de cualquier tipo de atraccion de alto riesgo en el parque;0;4
+7;administrador ;encargado de manejar el parque;0;5

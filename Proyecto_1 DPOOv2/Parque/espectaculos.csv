@@ -1,0 +1,9 @@
+Id_espectaculo;nombre_espectaculo;tipo;descripcion;duracion (min);turno;ubicacion ;cupo_maximo;empresa contratista;ambiente
+1;El Circo Fantástico;Circo;Un espectáculo de circo con acróbatas, malabaristas y payasos, que combina magia y comedia.;60;apertura;Arena Principal;300;Circo Magia S.A.;interno
+2;El Show de Magia;Magia;Magos profesionales realizan trucos impresionantes, ilusiones ópticas y trucos con fuego.;45;apertura;Teatral, Escenario Central;150;Magia Eventos Ltda.;externo
+3;Danza en el Agua;Danza Acuática;Un espectáculo donde bailarines realizan coreografías acuáticas sincronizadas con luces y música envolvente.;30;apertura;Piscina Central;100;Aqua Performances;externo
+4;Aventura en el Espacio;Teatro Infantil;Un espectáculo interactivo donde niños viajan al espacio con actores disfrazados de astronautas y alienígenas.;40;apertura;Teatro Infantil;250;Fantasía Producciones;interno
+5;Fuegos Artificiales Nocturnos;Pirotecnia;Espectáculo pirotécnico de 20 minutos que ilumina el cielo con increíbles fuegos artificiales sincronizados.;20;cierre;Área Central del Parque;500;Pirotecnia Global S.A.;externo
+6;Desfile de Carrozas;Desfile;Un desfile de carrozas decoradas con personajes temáticos, música en vivo y bailarines.;60;cierre;Calle Principal del Parque;200;Desfiles y Eventos Ltda.;externo
+7;Rock & Roll en Vivo;Concierto de Música;Banda de rock internacional toca grandes éxitos en un escenario gigante con efectos especiales.;90;cierre;Auditorio del Parque;500;Rock Producciones;externo
+8;Teatro de Sombras;Teatro;Un espectáculo teatral utilizando sombras chinescas para contar una historia mágica y mística.;30;cierre;Plaza de Espectáculos;150;Teatro Creativo S.A.;interno

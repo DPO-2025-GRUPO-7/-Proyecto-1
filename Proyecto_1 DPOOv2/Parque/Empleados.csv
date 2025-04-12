@@ -1,0 +1,6 @@
+Nombre ;identificacion ;TipoEmpleado;LugarAsigando;Turno;ManejoAlimentos;ManejoAtraccionesRegulares;ManejoAtraccionesRiegoAlto;Password
+Juan Perez;1;Cocinero;cafeteria;apertura;no;no;Ninguna;123
+Luis;2;Empleado Regular;cafeteria;cierre;si;no;Ninguna;123
+Paula;3;Atraccion Riesgo Medio;Atraccion1;apertura/cierre;no;si;Atraccion1;123
+;;Atraccion Riesgo Alto;;;;;;
+Julian;;Administrador;;;;;;

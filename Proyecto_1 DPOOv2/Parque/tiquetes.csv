@@ -1,0 +1,7 @@
+id_tiquete;tipo_tiquete;temporada;fecha_uso_ini;fecha_uso_fin;activo;fastpass;id_comprador;precio;plan_temporal;;;;;;;;;;;;;;;;;;;;
+1;Basico;SI;15/05/25;16/05/25;SI;SI;0;3000;diario;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;2;oro;si;11/04/25;12/04/25;si;si;1;43000;diario
+2;oro;si;11/04/25;12/04/25;si;si;1;43000;diario;;;;;;;;;;;;;;;;;;;;
+3;oro;si;11/04/25;12/04/25;si;si;1;43000;diario;;;;;;;;;;;;;;;;;;;;4;oro;si;2025-04-11;2025-04-12;si;si;1;43000;diario
+4;oro;si;2025-04-11;2025-04-12;si;si;1;43000;diario

@@ -1,0 +1,11 @@
+id_servicio;nombre;tipo;descripcion;ubicaci—n;Cupo max;num empleados
+1;"Pizzer’a ""La Trattoria""";Cafeteria;Pizzer’a que ofrece pizzas artesanales, pastas y ensaladas en un ambiente relajado para toda la familia.;Zona de Restaurantes;100;3
+2;"Hamburguesas ""FastBite""";Cafeteria;Servicio r‡pido de hamburguesas gourmet, papas fritas y batidos. Ideal para una comida r‡pida y sabrosa.;Entrada principal del parque;50;3
+3;Taquilla Principal;Taquillas;Venta de boletos para acceso general y a atracciones. Proporciona mapas del parque y servicios de atenci—n.;Entrada al parque;500;2
+4;"Tienda de Souvenirs ""Magia""";Tienda;Tienda de recuerdos con art’culos tem‡ticos del parque, juguetes, peluches y recuerdos personalizados.;Zona de compras;50;4
+5;"Restaurante ""Delicias del Mar""";Cafeteria;Restaurante especializado en mariscos frescos, con menœ de platos elaborados y bebidas exclusivas.;Zona de Restaurantes;80;6
+6;"Tienda de Ropa ""Chic Park""";Tienda;Tienda de ropa casual y deportiva con productos exclusivos del parque, ideales para el clima del lugar.;çrea central del parque;30;2
+7;Taquilla VIP;Taquillas;Taquilla exclusiva para compra de boletos VIP, con acceso r‡pido a las atracciones principales.;Entrada VIP del parque;100;4
+8;"Helader’a ""Frosty Joy""";Cafeteria;Helados artesanales, batidos y postres fr’os para refrescarse mientras se disfruta del parque.;Zona de atracciones acu‡ticas;60;3
+9;"Tienda ""Juguetes M‡gicos""";Tienda;Tienda de juguetes y art’culos para ni–os, con una secci—n especial de productos personalizados del parque.;Zona infantil del parque;40;3
+10;"Food Court ""Sabores del Mundo""";Cafeteria;çrea de comida con opciones internacionales: tacos, sushi, pizza, y m‡s.;Plaza central del parque;150;8
