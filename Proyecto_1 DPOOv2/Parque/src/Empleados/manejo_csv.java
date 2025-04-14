@@ -22,7 +22,9 @@ public class manejo_csv {
 	ArrayList<Turno> turnos_lista_agregar = new ArrayList<>();
 	ArrayList<Tiquete> tiquetes_lista = new ArrayList<>();
 	ArrayList<Tiquete> tiquetes_lista_agregar = new ArrayList<>();
-
+	List<Atraccion> atraccion_lista = new ArrayList<>();
+	List<Espectaculo> espectaculo_lista = new ArrayList<>();
+	List<Empleado> empleado_lista = new ArrayList<>();
 	public void leerFicheroPersonal(String nombreArchivo) {
 		FileReader fr;
 		try {
@@ -384,6 +386,91 @@ public class manejo_csv {
 		
 	}
 
+public void mostrarAtracciones() {
+    for (Atraccion a : atraccion_lista) {
+        System.out.println(a.getNombre_Atraccion());
+    }
+}
 
+public void mostrarEspectaculos() {
+    for (Espectaculo e : espectaculo_lista) {
+        System.out.println(e.toString());
+    }
+}
+
+public void mostrarEmpleados() {
+    for (Empleado e : empleado_lista) {
+        System.out.println(e.toString());
+    }
+}
+public List<Empleado> empleado_lista = new ArrayList<>();
+
+public void leerFicheroEmpleados(String nombreArchivo) {
+    empleado_lista.clear();
+
+    try (BufferedReader br = new BufferedReader(new FileReader(nombreArchivo, StandardCharsets.UTF_8))) {
+        String encabezado = br.readLine(); // Omitir encabezado
+
+        String linea;
+        while ((linea = br.readLine()) != null) {
+            if (linea.trim().isEmpty()) continue;
+
+            String[] datos = linea.split(";");
+            if (datos.length < 3) continue;
+
+            try {
+                int id = Integer.parseInt(datos[0].trim());
+                String nombre = datos[1].trim();
+                String rol = datos[2].trim();
+
+                Empleado emp = new Empleado(id, nombre, rol);
+                empleado_lista.add(emp);
+                System.out.println("Empleado cargado: " + emp);
+
+            } catch (NumberFormatException e) {
+                System.out.println("Error de formato en la línea: " + linea);
+            }
+        }
+
+    } catch (IOException e) {
+        System.out.println("Error leyendo empleados: " + e.getMessage());
+    }
+}
+public Atraccion buscarAtraccionPorId(int id) {
+    for (Atraccion a : atraccion_lista) {
+        if (a.getId_Atraccion() == id) {
+            return a;
+        }
+    }
+    return null;
+}
+public Empleado buscarEmpleadoPorId(int id) {
+    for (Empleado e : empleado_lista) {
+        if (e.getIdEmpleado() == id) {
+            return e;
+        }
+    }
+    return null;
+}
+public void asignarEmpleadosAAtraccion(int idAtraccion, List<Integer> idsEmpleados) {
+    Atraccion atr = buscarAtraccionPorId(idAtraccion);
+    if (atr == null) {
+        System.out.println("Atracción no encontrada.");
+        return;
+    }
+
+    List<Empleado> asignados = new ArrayList<>();
+    for (int idEmp : idsEmpleados) {
+        Empleado e = buscarEmpleadoPorId(idEmp);
+        if (e != null) {
+            asignados.add(e);
+        } else {
+            System.out.println("Empleado con ID " + idEmp + " no encontrado.");
+        }
+    }
+
+    atr.asignarEmpleados(asignados);
+    System.out.println("Empleados asignados a " + atr.getNombre_Atraccion());
+}
 		
 }

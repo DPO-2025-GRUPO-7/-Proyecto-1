@@ -1,0 +1,8 @@
+package Atracciones;
+
+public enum NivelExclusividad {
+    BASICO,
+    FAMILIAR,
+    ORO,
+    DIAMANTE
+}

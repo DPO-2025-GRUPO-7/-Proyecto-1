@@ -22,34 +22,43 @@ public class Atraccion {
 	private String tipo_tiquete;
 	private String temporada;
 	private String vigencia_mantenimiento;
-	
-	public Atraccion(int id_Atraccion, String nombre_Atraccion, String tipo, String descripcion, String duracion,
-			String ubicación, String Cupo_max, String numero_empleados, String tipo_Riesgo, String edad_min, String edad_max,
-			String altura_min, String altura_max, String peso_min, String peso_max, String contraindicaciones,
-			String recomendaciones, String ambiente, String tipo_tiquete, String temporada,
-			String vigencia_mantenimiento) {
-		this.id_Atraccion = id_Atraccion;
-		this.nombre_Atraccion = nombre_Atraccion;
-		this.tipo = tipo;
-		this.descripcion = descripcion;
-		this.duracion = duracion;
-		this.ubicación = ubicación;
-		this.Cupo_max = Cupo_max;
-		this.numero_empleados = numero_empleados;
-		this.tipo_Riesgo = tipo_Riesgo;
-		this.edad_min = edad_min;
-		this.edad_max = edad_max;
-		this.altura_min = altura_min;
-		this.altura_max = altura_max;
-		this.peso_min = peso_min;
-		this.peso_max = peso_max;
-		this.contraindicaciones = contraindicaciones;
-		this.recomendaciones = recomendaciones;
-		this.ambiente = ambiente;
-		this.tipo_tiquete = tipo_tiquete;
-		this.temporada = temporada;
-		this.vigencia_mantenimiento = vigencia_mantenimiento;
-	}
+	private boolean enMantenimiento = false;
+    private boolean enOperacion = false;
+    private NivelExclusividad nivelExclusividad;
+
+    private List<Empleado> empleadosAsignados;
+    private List<Restriccion> restricciones;
+    private List<Advertencia> advertencias;
+	    public Atraccion(int id_Atraccion, String nombre_Atraccion, String tipo, String descripcion, String duracion,
+                     String ubicación, int cupo_max, int empleados_minimos, String tipo_Riesgo, int edad_min, int edad_max,
+                     float altura_min, float altura_max, float peso_min, float peso_max,
+                     String ambiente, String tipo_tiquete, String temporada, String vigencia_mantenimiento,
+                     NivelExclusividad nivelExclusividad) {
+
+        this.id_Atraccion = id_Atraccion;
+        this.nombre_Atraccion = nombre_Atraccion;
+        this.tipo = tipo;
+        this.descripcion = descripcion;
+        this.duracion = duracion;
+        this.ubicación = ubicación;
+        this.cupo_max = cupo_max;
+        this.empleados_minimos = empleados_minimos;
+        this.tipo_Riesgo = tipo_Riesgo;
+        this.edad_min = edad_min;
+        this.edad_max = edad_max;
+        this.altura_min = altura_min;
+        this.altura_max = altura_max;
+        this.peso_min = peso_min;
+        this.peso_max = peso_max;
+        this.ambiente = ambiente;
+        this.tipo_tiquete = tipo_tiquete;
+        this.temporada = temporada;
+        this.vigencia_mantenimiento = vigencia_mantenimiento;
+        this.nivelExclusividad = nivelExclusividad;
+        this.empleadosAsignados = new ArrayList<>();
+        this.restricciones = new ArrayList<>();
+        this.advertencias = new ArrayList<>();
+    }
 
 
 	public int getId_Atraccion() {
@@ -261,7 +270,45 @@ public class Atraccion {
 		this.vigencia_mantenimiento = vigencia_mantenimiento;
 	}
 
+	public void iniciarOperacion() {
+        if (!enMantenimiento && empleadosAsignados.size() >= empleados_minimos) {
+            enOperacion = true;
+            System.out.println("La atracción ha sido iniciada.");
+        } else {
+            System.out.println("No se puede iniciar. Verifique mantenimiento o número de empleados.");
+        }
+    }
 
+    public void detenerOperacion() {
+        enOperacion = false;
+        System.out.println("La atracción ha sido detenida.");
+    }
+
+    public void asignarEmpleados(List<Empleado> empleados) {
+        this.empleadosAsignados = empleados;
+    }
+
+    public void agregarRestriccion(Restriccion r) {
+        restricciones.add(r);
+    }
+
+    public void agregarAdvertencia(Advertencia a) {
+        advertencias.add(a);
+    }
+
+    public void mostrarRestricciones() {
+        System.out.println("Restricciones:");
+        for (Restriccion r : restricciones) {
+            System.out.println(" - " + r.getDescripcion());
+        }
+    }
+
+    public void mostrarAdvertencias() {
+        System.out.println("Advertencias:");
+        for (Advertencia a : advertencias) {
+            System.out.println(" - " + a.getMensaje());
+        }
+    }
 	@Override
 	public String toString() {
 		return "Atraccion [id_Atraccion=" + id_Atraccion + ", nombre_Atraccion=" + nombre_Atraccion + ", tipo=" + tipo
